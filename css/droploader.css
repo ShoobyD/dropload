@@ -61,57 +61,6 @@ body
 	visibility: hidden;
 }
 
-.box__uploading,
-.box__success,
-.box__error
-{
-	display: none;
-}
-.droploader.is-uploading .box__uploading,
-.droploader.is-success .box__success,
-.droploader.is-error .box__error
-{
-	display: block;
-	position: absolute;
-	top: 50%;
-	right: 0;
-	left: 0;
-
-	-webkit-transform: translateY( -50% );
-	transform: translateY( -50% );
-}
-.box__uploading
-{
-	font-style: italic;
-}
-.box__success
-{
-	-webkit-animation: appear-from-inside .25s ease-in-out;
-	animation: appear-from-inside .25s ease-in-out;
-}
-@-webkit-keyframes appear-from-inside
-{
-	from	{ -webkit-transform: translateY( -50% ) scale( 0 ); }
-	75%		{ -webkit-transform: translateY( -50% ) scale( 1.1 ); }
-	to		{ -webkit-transform: translateY( -50% ) scale( 1 ); }
-}
-@keyframes appear-from-inside
-{
-	from	{ transform: translateY( -50% ) scale( 0 ); }
-	75%		{ transform: translateY( -50% ) scale( 1.1 ); }
-	to		{ transform: translateY( -50% ) scale( 1 ); }
-}
-
-.box__restart
-{
-	font-weight: 700;
-}
-.box__restart:focus,
-.box__restart:hover
-{
-	color: #39bfd3;
-}
-
 .js .box__file
 {
 	width: 0.1px;
