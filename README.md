@@ -1,4 +1,4 @@
-# dropload
+# droploader
 A simple drag&drop uploader;
 inspired by [CSS-Tricks](https://css-tricks.com/drag-and-drop-file-uploading/).
 
