@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<title>Drag and Drop File Uploading</title>
+	<link rel="canonical" href="https://css-tricks.com/examples/DragAndDropFileUploading/">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="stylesheet" href="css/markdown.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/droploader.css" />
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400" />
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<!-- remove this if you use Modernizr -->
+	<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+
+	<script src="lib/polyfills.js"></script>
+	<script src="lib/utils.js"></script>
+	<script src="lib/droploader.js"></script>
+
+	<script>
+		$( function() {
+			const dialog = window.Dialog? new Dialog(): { 'open' : alert.bind( window ) };
+			$( '.uploader' ).droploader( {
+				'onload' : function( fileList ) {
+					dialog.open( [
+							`<div>${ fileList.length } files uploaded:</div>`,
+							`<ul>${ Array.from( fileList ).map( f => `<li>${ f.name }</li>` ).join( '' ) }</ul>`,
+						] );
+					/*
+					if ( fileList.length > 1 )
+						return dialog.open( 'One file at a time, please.' );
+						*/
+
+				},
+			} );
+		} );
+	</script>
+
+</head>
+
+<body>
+
+<div class="container" role="main">
+
+	<div class="uploader"> </div>
+
+</div>
+
+</body>
+
+</html>
+
