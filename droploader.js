@@ -58,6 +58,8 @@
 				} );
 		}
 
+		return $uploadWrap;
+
 	};
 
 } )( jQuery );

@@ -36,6 +36,12 @@ header h1 {
 	text-align      : center;
 	line-height     : var( --header_height );
 }
+
+ul {
+	text-align: left;
+	margin: 20px;
+}
+
 .uploader {
 	width: 360px;
 	height: 220px;
