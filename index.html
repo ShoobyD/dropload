@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
 
-<head>
-	<meta charset="utf-8">
-	<title>Drag and Drop File Uploading</title>
-	<link rel="canonical" href="https://css-tricks.com/examples/DragAndDropFileUploading/">
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<link rel="stylesheet" href="css/markdown.css" />
-	<link rel="stylesheet" href="css/main.css" />
-	<link rel="stylesheet" href="css/droploader.css" />
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400" />
+	<head>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<meta charset="utf-8">
+		<title>Simple Drag & Drop Uploader</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 
-	<!-- remove this if you use Modernizr -->
-	<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,400" />
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-	<script src="lib/polyfills.js"></script>
-	<script src="lib/utils.js"></script>
-	<script src="droploader.js"></script>
+		<link rel="stylesheet" href="../dialog/dialog.css" />
+		<script src="../dialog/dialog.js"></script>
 
-	<script>
-		$( function() {
-			const dialog = window.Dialog? new Dialog(): { 'open' : alert.bind( window ) };
-			$( '.uploader' ).droploader( {
-				'onload' : function( fileList ) {
-					dialog.open( [
-							`<div>${ fileList.length } files uploaded:</div>`,
+		<link rel="stylesheet" href="droploader.css" />
+		<script src="droploader.js"></script>
+
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+			<header>
+				<h1>Droploader</h1>
+			</header>
+
+			<div>
+				<p>
+					A Drag & Drop Uploader.
+				</p>
+				<div class="uploader"></div>
+			</div>
+		</div>
+		<script>
+			$( function() {
+				const dialog = window.Dialog? new Dialog(): { 'open' : alert.bind( window ) };
+				$( '.uploader' ).droploader( {
+					'onload' : function( fileList ) {
+						dialog.open( [
+							`<h2>${ fileList.length } files uploaded:</h2>`,
 							`<ul>${ Array.from( fileList ).map( f => `<li>${ f.name }</li>` ).join( '' ) }</ul>`,
 						] );
-					/*
-					if ( fileList.length > 1 )
-						return dialog.open( 'One file at a time, please.' );
-						*/
+						/*
+						if ( fileList.length > 1 )
+							return dialog.open( 'One file at a time, please.' );
+							*/
 
-				},
+					},
+				} );
 			} );
-		} );
-	</script>
+		</script>
 
-</head>
-
-<body>
-
-<div class="container" role="main">
-
-	<div class="uploader"> </div>
-
-</div>
-
-</body>
+	</body>
 
 </html>
 

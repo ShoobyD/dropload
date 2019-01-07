@@ -7,11 +7,23 @@
 	margin          : 0;
 	padding         : 0;
 }
+
+body {
+	font-family     : Roboto, sans-serif;
+	color           : #0f3c4b;
+	background-color: #e5edf1;
+	color           : #1f0f4d;
+	background-color: #e9e4f1;
+	padding         : 5rem 1.25rem; /* 80 20 */
+}
+
 #wrapper {
-	display         : grid;
-	grid            : var( --header_height ) auto auto / auto;
-	align-content   : center;
-	justify-content : center;
+	width           : 100%;
+	max-width       : 800px; /* 800 */
+	color           : Black;
+	background-color: White;
+	text-align      : center;
+	margin          : 0 auto;
 }
 #wrapper > * {
 	border          : var( --black_border );
@@ -24,23 +36,8 @@ header h1 {
 	text-align      : center;
 	line-height     : var( --header_height );
 }
-
-/** readme **/
-#readme {
-	position        : fixed;
-	top             : 0;
-	bottom          : 0;
-	right           : 0;
-	width           : 25%;
-	overflow-y      : scroll;
-	padding         : 42px;
-	background      : Cornsilk;
-	transition      : right 400ms ease-in,
-						visibility 400ms ease-in;
-	visibility      : visible;
+.uploader {
+	width: 360px;
+	height: 220px;
+	margin: 20px auto;
 }
-#readme[aria-hidden="true"] {
-	right           : -400px;
-	visibility      : hidden;
-}
-

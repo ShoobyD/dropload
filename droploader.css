@@ -1,52 +1,34 @@
 
-body
-{
-	font-family: Roboto, sans-serif;
-	color: #0f3c4b;
-	background-color: #e5edf1;
-	padding: 5rem 1.25rem; /* 80 20 */
-}
-
-.container
-{
-	width: 100%;
-	max-width: 680px; /* 800 */
-	text-align: center;
-	margin: 0 auto;
-}
-
-.droploader
-{
+.droploader {
 	font-size: 1.25rem; /* 20 */
 	background-color: #c8dadf;
 	position: relative;
-	padding: 100px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
 }
-.droploader.has-advanced-upload
-{
+.droploader.has-dragdrop {
 	outline: 2px dashed #92b0b3;
 	outline-offset: -10px;
 
 	-webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
 	transition: outline-offset .15s ease-in-out, background-color .15s linear;
 }
-.droploader.is-dragover
-{
+.droploader.is-dragover {
 	outline-offset: -20px;
 	outline-color: #c8dadf;
 	background-color: #fff;
 }
-.box__dragndrop,
-.box__icon
-{
+.droploader .box__dragndrop,
+.droploader svg {
 	display: none;
 }
-.droploader.has-advanced-upload .box__dragndrop
-{
+.droploader.has-dragdrop .box__dragndrop {
 	display: inline;
 }
-.droploader.has-advanced-upload .box__icon
-{
+.droploader.has-dragdrop svg {
 	width: 100%;
 	height: 80px;
 	fill: #92b0b3;
@@ -54,15 +36,7 @@ body
 	margin-bottom: 40px;
 }
 
-.droploader.is-uploading .box__input,
-.droploader.is-success .box__input,
-.droploader.is-error .box__input
-{
-	visibility: hidden;
-}
-
-.js .box__file
-{
+.droploader input {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -70,8 +44,7 @@ body
 	position: absolute;
 	z-index: -1;
 }
-.js .box__file + label
-{
+.droploader input + label {
 	max-width: 80%;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -79,25 +52,17 @@ body
 	display: inline-block;
 	overflow: hidden;
 }
-.js .box__file + label:hover strong,
-.box__file:focus + label strong,
-.box__file.has-focus + label strong
-{
+.droploader input + label:hover strong,
+.droploader input:focus + label strong,
+.droploader input.has-focus + label strong {
 	color: #39bfd3;
 }
-.js .box__file:focus + label,
-.js .box__file.has-focus + label
-{
+.droploader input:focus + label,
+.droploader input.has-focus + label {
 	outline: 1px dotted #000;
 	outline: -webkit-focus-ring-color auto 5px;
 }
-.js .box__file + label *
-{
+.droploader input + label * {
 	/* pointer-events: none; */ /* in case of FastClick lib use */
-}
-
-.no-js .box__file + label
-{
-	display: none;
 }
 
