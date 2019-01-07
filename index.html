@@ -42,11 +42,6 @@
 							`<h2>${ fileList.length } files uploaded:</h2>`,
 							`<ul>${ Array.from( fileList ).map( f => `<li>${ f.name }</li>` ).join( '' ) }</ul>`,
 						] );
-						/*
-						if ( fileList.length > 1 )
-							return dialog.open( 'One file at a time, please.' );
-							*/
-
 					},
 				} );
 			} );

@@ -21,11 +21,11 @@
 	outline-color: #c8dadf;
 	background-color: #fff;
 }
-.droploader .box__dragndrop,
+.droploader .drophere,
 .droploader svg {
 	display: none;
 }
-.droploader.has-dragdrop .box__dragndrop {
+.droploader.has-dragdrop .drophere {
 	display: inline;
 }
 .droploader.has-dragdrop svg {
