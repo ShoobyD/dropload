@@ -36,6 +36,7 @@
 
 		$input.on( 'change', function( e ) {
 			options.onload( e.target.files );
+			$input.val( '' );
 		} );
 
 		// drag&drop files if the feature is available
